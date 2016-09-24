@@ -1,0 +1,152 @@
+/*--------- Colors ----------*/
+/*---------- Mixins ----------*/
+/*---------- SCSS ----------*/
+/* line 32, ../sass/sass/styles.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 36, ../sass/sass/styles.scss */
+body {
+  background-color: #363636;
+  color: white;
+  margin: 11px;
+  font-family: 'Bree Serif', serif;
+}
+
+/* line 42, ../sass/sass/styles.scss */
+h1, h2, h3, h4, h5 {
+  box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+  border-bottom: 1px solid #1b1b1b;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+/* line 47, ../sass/sass/styles.scss */
+h1 {
+  color: #1b1b1b;
+  text-shadow: 0px 0.6px 0px #565656;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* line 53, ../sass/sass/styles.scss */
+hr {
+  background-color: #1b1b1b;
+  height: 1px;
+  border: none;
+  border-bottom: 1px solid #565656;
+  margin: 10px 0;
+}
+
+/* line 61, ../sass/sass/styles.scss */
+#timetable-wrapper {
+  width: 90%;
+  margin: auto;
+}
+
+/* line 65, ../sass/sass/styles.scss */
+.timetable-column {
+  width: 99%;
+  position: relative;
+  margin: 10px;
+}
+
+/* line 70, ../sass/sass/styles.scss */
+.timetable-column-title {
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+/* line 75, ../sass/sass/styles.scss */
+ul.timetable-column-events {
+  width: 100%;
+  position: relative;
+}
+
+/* line 79, ../sass/sass/styles.scss */
+ul.timetable-column-events:hover {
+  background-color: rgba(62, 172, 171, 0.09);
+  cursor: pointer;
+}
+
+/* line 83, ../sass/sass/styles.scss */
+li.society {
+  width: 100%;
+  height: 100px;
+  list-style-type: none;
+  clear: both;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  background: #202020;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* line 92, ../sass/sass/styles.scss */
+.society-image {
+  width: 100px;
+  height: 100px;
+  background-color: #1b1b1b;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: absolute;
+  left: 0;
+}
+/* line 102, ../sass/sass/styles.scss */
+.society-image img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 107, ../sass/sass/styles.scss */
+.society-text {
+  width: 36%;
+  position: absolute;
+  left: 110px;
+  top: 6px;
+}
+/* line 113, ../sass/sass/styles.scss */
+.society-text .society-name {
+  color: #829fff;
+  box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+  border-bottom: 1px solid #1b1b1b;
+  font-size: 20px;
+}
+/* line 118, ../sass/sass/styles.scss */
+.society-text .society-location {
+  color: skyblue;
+  font-size: 18px;
+}
+
+/* line 126, ../sass/sass/styles.scss */
+.society-time {
+  height: 100%;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+  border-bottom-right-radius: 5px;
+  font-size: 20px;
+  text-shadow: 0 1px 0 #0b4a49;
+  width: 30%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 138, ../sass/sass/styles.scss */
+.society-time div {
+  color: white;
+  padding: 11.5px 20px;
+  text-align: center;
+}
+/* line 144, ../sass/sass/styles.scss */
+.society-time .society-time-start {
+  background-color: #269998;
+}
+/* line 148, ../sass/sass/styles.scss */
+.society-time .society-time-end {
+  background-color: #3eacab;
+}
