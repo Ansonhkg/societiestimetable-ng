@@ -2,7 +2,7 @@
 <nav>
     <ul>
         <li class="nav_all" (click)="onSelect('all')">All</li>
-        <li *ngFor="let day of days" (click)="onSelect(day)">{{day}}</li>
+        <li *ngFor="let day of days" [class.selected]="day === selectedDays[0] && firstload == false" (click)="onSelect(day)">{{day}}</li>
     </ul>
 </nav>
 

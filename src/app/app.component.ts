@@ -12,14 +12,16 @@ export class AppComponent {
 
   title = 'Lancaster University Societies Timetable';
   timetable = TIMETABLE;
-  
+  firstload = true;
   days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   selectedDays = this.days;
 
   msg = 'No activities today :(';
 
   onSelect(day){
+    this.firstload = false;
     if(day == 'all'){
+      this.firstload = true;
       this.selectedDays = this.days;
       return;
     }

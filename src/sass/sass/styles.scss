@@ -4,6 +4,7 @@
 $grey       : #363636;  //background          
 $darkgrey   : #1b1b1b;  //Timetable           
 $lightgrey  : #565656;  //Timetable -> Shadow 
+$buttongrey : #313131;  //Monday, Tuesday, etc.
 
 $brightteal : #48d6d5;  //Featured background 
 $darkteal   : #269998;  //Start time          
@@ -62,14 +63,17 @@ hr{
     margin:10px 0;
 }
 /*----- Navigation -----*/
+.selected{
+    background-color: $darkteal;
+}
 nav{
-    text-align:center;
-    margin:auto;
-    width:90%;
-    height:22px;
-    position:relative;
-
-    
+    text-align: left;
+    margin: auto;
+    width: 10%;
+    position: relative;
+    margin-left: 1%;
+    float: left;
+    margin-top:16px;
 
     ul{
 
@@ -78,15 +82,15 @@ nav{
         }
 
         li{
-            list-style-type:none;
-            background-color:$lightteal;
-            cursor:pointer;
-            text-align:center;
-            float:left;
-            padding:0.2%;
-            margin:0.2%;
-            width:((100% - (0.8% * 8)) / 8);
-            overflow:hidden;
+            background-color:$buttongrey;
+            list-style-type: none;
+            cursor: pointer;
+            text-align: left;
+            padding: 20px;
+            overflow: hidden;
+            padding-left: 14px;
+            margin-bottom: 3px;
+            font-size: 16px;
         }
         li:hover{
             background-color:$darkteal;
@@ -100,22 +104,30 @@ footer{
     font-size:11px;
     text-align:center;
     padding:5px;
+    clear:both;
     a{
         color:$lightteal;
         text-decoration: none;
         border-bottom: 0.8px dotted;
     }
 }
+
+/*---------- Main Content ---------- */
+.msg{
+    color:$darkgrey;
+}
 #timetable-wrapper{
-    width:90%;
-    margin:auto;
-    min-height:143px;
+    width: 87%;
+    float: left;
+    margin-right: 2%;
 }
 .timetable-column{
     width:99%;
     position:relative;
-    margin:10px;
     clear:both;
+    padding:10px;
+    margin-bottom: 5px;
+    border-bottom: 5px dashed #313131;
 }
 .timetable-column-title{
     color: white;
