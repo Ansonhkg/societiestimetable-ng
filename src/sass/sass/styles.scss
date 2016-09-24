@@ -7,7 +7,8 @@ $lightgrey  : #565656;  //Timetable -> Shadow
 
 $brightteal : #48d6d5;  //Featured background 
 $darkteal   : #269998;  //Start time          
-$lightteal  : #3eacab;  //End time     
+$lightteal  : #3eacab;  //End time
+$dentedteal : #28807f;      
 
 $babyblue   : #829fff;  //Society Name            
 $skyblue    : #bbcbff;  //Society Location
@@ -36,7 +37,6 @@ $skyblue    : #bbcbff;  //Society Location
 body {
     background-color: $grey;
     color:white;
-    margin:11px;
     font-family: 'Bree Serif', serif;
 }
 h1,h2,h3,h4,h5{
@@ -45,10 +45,14 @@ h1,h2,h3,h4,h5{
     padding-bottom:5px;
 }
 h1 {
-  color: $darkgrey;
-  text-shadow:0px 0.6px 0px $lightgrey;
-  font-weight:bold;
-  text-align: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    background: $darkgrey;
+    padding-bottom: 10px;
+    font-size: 25px;
+    padding-top: 5px;
+    text-shadow:0px 1px 0px black;
 }
 hr{
     background-color: $darkgrey;
@@ -57,15 +61,61 @@ hr{
     border-bottom:1px solid $lightgrey;
     margin:10px 0;
 }
+/*----- Navigation -----*/
+nav{
+    text-align:center;
+    margin:auto;
+    width:90%;
+    height:22px;
+    position:relative;
 
+    
+
+    ul{
+
+        li.nav_all{
+            background: $darkteal;
+        }
+
+        li{
+            list-style-type:none;
+            background-color:$lightteal;
+            cursor:pointer;
+            text-align:center;
+            float:left;
+            padding:0.2%;
+            margin:0.2%;
+            width:((100% - (0.8% * 8)) / 8);
+            overflow:hidden;
+        }
+        li:hover{
+            background-color:$darkteal;
+            text-shadow:0px 1px 0px $dentedteal;
+        }
+    }
+}
+/*----- Footer -----*/
+footer{
+    background-color: $darkgrey;
+    font-size:11px;
+    text-align:center;
+    padding:5px;
+    a{
+        color:$lightteal;
+        text-decoration: none;
+        border-bottom: 0.8px dotted;
+    }
+}
 #timetable-wrapper{
     width:90%;
     margin:auto;
+    min-height:143px;
 }
 .timetable-column{
     width:99%;
     position:relative;
     margin:10px;
+    clear:both;
 }
 .timetable-column-title{
     color: white;

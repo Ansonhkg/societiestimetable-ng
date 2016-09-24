@@ -1,1 +1,32 @@
-<h1>Testing only</h1>
+<h1>{{title}}</h1>
+<nav>
+    <ul>
+        <li class="nav_all" (click)="onSelect('all')">All</li>
+        <li *ngFor="let day of days" (click)="onSelect(day)">{{day}}</li>
+    </ul>
+</nav>
+
+<section id="timetable-wrapper">
+<div *ngFor="let day of selectedDays;" class="timetable-column">
+    
+    <h4 class="timetable-column-title">{{day}}</h4>
+    
+    <div *ngIf="timetable[day].length === 0" class="msg">{{msg}}</div>
+
+    <ul *ngFor="let society of timetable[day]" class="timetable-column-events">
+    
+        <li class="society">
+            <div class="society-image"><img src="{{society.img}}"/></div>
+            <div class="society-text">
+                <li class="society-name">{{society.name}}</li>
+                <li class="society-location">@ {{society.location}}</li>
+            </div>
+            <div class="society-time">
+                <div class="society-time-start">{{society.start}}</div>
+                <div class="society-time-end">{{society.end}}</div>
+            </div>
+        </li>
+
+    </ul>
+</div>
+</section>

@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { FooterComponent } from './footer.component';
+
+// Pipes
+import { DayPipe } from './pipes/day.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    DayPipe
   ],
   imports: [
     BrowserModule,
@@ -15,6 +21,6 @@ import { AppComponent } from './app.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, FooterComponent]
 })
 export class AppModule { }
