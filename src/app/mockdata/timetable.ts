@@ -1,4 +1,3 @@
-import { Slot, Day } from '../shared/slot';
 
 export const TIMETABLE = {
 Monday: [
