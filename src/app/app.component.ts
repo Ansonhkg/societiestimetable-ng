@@ -16,15 +16,14 @@ import { TIMETABLE } from './mockdata/timetable';
 export class AppComponent implements OnInit{
 
   btnSelectedDay = true;
-
   title = 'Lancaster University Societies Timetable';
+  msg = 'No activities today :(';
+  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
   // timetable = TIMETABLE;
   timetable = [];
-  
-  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   selectedDays = this.days;
-
-  msg = 'No activities today :(';
+  selectedSociety;
 
   constructor(private http: Http) { }
 
@@ -39,14 +38,24 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.getData();
+    this.getTimetable();
   }
 
-  getData(){
+  getTimetable(){
     this.http.get('http://v1.api.societies.online/timetable')
     .map((res:Response) => res.json())
       .subscribe(
         data => this.timetable = data,
+        err => console.error(err),
+        () => console.log('done')
+      );
+  }
+
+  getSocietyInfo(id){
+    this.http.get('http://v1.api.societies.online/societies/' + id)
+    .map((res:Response) => res.json())
+      .subscribe(
+        data => this.selectedSociety = data[0],
         err => console.error(err),
         () => console.log('done')
       );
