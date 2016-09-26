@@ -17,8 +17,8 @@ export class AppComponent implements OnInit{
 
   btnSelectedDay = true;
   title = 'Lancaster University Societies Timetable';
-  msg = 'No activities today :(';
-  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  msg   = 'No activities today :(';
+  days  = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   // timetable = TIMETABLE;
   timetable = [];
@@ -59,6 +59,10 @@ export class AppComponent implements OnInit{
         err => console.error(err),
         () => console.log('done')
       );
+  }
+
+  moreinfo(url){
+    window.open(url);
   }
 
 }

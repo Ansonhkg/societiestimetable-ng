@@ -74,6 +74,7 @@ h1 {
     @include small(){
         font-size:18px;
         margin-bottom:0;
+        line-height:2.5em;
     }
 }
 hr{
@@ -167,6 +168,12 @@ footer{
     width: 87%;
     float: left;
     margin-right: 2%;
+
+    @include small(){
+        margin-right:0%;
+        margin-left:2%;
+    }
+
 }
 .timetable-column{
     width:99%;
@@ -243,6 +250,7 @@ li.society{
         width:45%;
         height:$column-height;
         top:0;
+        overflow:auto;
     }
 
     .society-name{
@@ -295,7 +303,7 @@ li.society{
 
         @include small(){
             height: 50%;
-            line-height:2em;
+            line-height:2.1em;
             padding:0;
         }
 

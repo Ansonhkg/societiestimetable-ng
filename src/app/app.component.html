@@ -14,8 +14,7 @@
     
     <div *ngIf="timetable[day]?.length === 0" class="msg">{{msg}}</div>
     
-    <ul *ngFor="let society of timetable[day]" class="timetable-column-events">
-       
+    <ul (click)="moreinfo(society.url)" *ngFor="let society of timetable[day]" class="timetable-column-events" >
         <li class="society">
             <div class="society-image"><img src="{{society.img}}"/></div>
             <div class="society-text">
