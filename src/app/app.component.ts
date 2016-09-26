@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
 
   btnSelectedDay = true;
   title = 'Lancaster University Societies Timetable';
-  msg   = 'No activities today :(';
+  msg   = 'No activities today :('; 
   days  = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   // timetable = TIMETABLE;

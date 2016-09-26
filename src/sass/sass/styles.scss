@@ -14,7 +14,52 @@ $dentedteal : #28807f;
 $babyblue   : #829fff;  //Society Name            
 $skyblue    : #bbcbff;  //Society Location
 
+/*---------- Browsers ----------*/
+  /*
+  * Browser Specific CSS rules
+  * Usuage example:
+  * @include firefox{
+      background-color:red;
+    }
+  */
+
+  //Firefox
+  @mixin firefox{
+    @-moz-document url-prefix(){
+      @content;
+    }
+  }
+
+  // Internet Explorer/Edge ≥ 10
+  @mixin ie{
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      @content;
+    }
+  }
+
+  // Opera ≥ 12
+  @mixin opera{
+      @media (min-resolution: .001dpcm) {
+           _:-o-prefocus, .selector {};
+           @content;
+    }
+  }
+
+  //Safari
+  @mixin safari{
+      // Safari ≤ 6
+      @media screen { @media (min-width: 0px) {}; @content };
+
+      // Safari >= 7
+      @media \\0 screen {
+          @content;
+      }
+  }
+
 /*---------- Media Queries ----------*/
+@mixin xs(){
+    @media (max-width: 350px) { @content; }
+}
 @mixin small(){
     @media (max-width: 768px) { @content; }
 }
@@ -60,7 +105,7 @@ h1,h2,h3,h4,h5{
     margin-bottom:10px;
     padding-bottom:5px;
 }
-h1 {
+header.header {
     color: white;
     font-weight: bold;
     text-align: center;
@@ -71,11 +116,19 @@ h1 {
     text-shadow:0px 1px 0px black;
     height:40px;
     line-height:40px;
+
     @include small(){
         font-size:18px;
         margin-bottom:0;
         line-height:2.5em;
     }
+
+    @include xs(){
+        font-size:16px;
+        overflow:hidden;
+    }
+
+
 }
 hr{
     background-color: $darkgrey;
@@ -135,6 +188,18 @@ nav{
                 white-space: nowrap;
                 overflow: hidden;
                 writing-mode: vertical-lr;
+                writing-mode: tb-lr;
+
+                @include ie(){
+                    writing-mode: tb-lr;
+                    height:55px;
+                }
+
+                @include safari(){
+                    writing-mode: tb-lr;
+                    height:55px;
+                }
+
             }
 
         }
@@ -161,6 +226,8 @@ footer{
 }
 
 /*---------- Main Content ---------- */
+$column-height: 70px;
+
 .msg{
     color:$darkgrey;
 }
@@ -203,8 +270,6 @@ ul.timetable-column-events:hover{
     background-color: rgba(62, 172, 171, 0.09);
     cursor: pointer;
 }
-
-$column-height: 70px;
 
 li.society{
     width:100%;
@@ -253,6 +318,10 @@ li.society{
         overflow:auto;
     }
 
+    @include xs(){
+        width:50%;
+    }
+
     .society-name{
         color:$babyblue;
         font-size:20px;
@@ -260,14 +329,14 @@ li.society{
         @include line();
 
         @include small(){
-            font-size:18px;
+            font-size:17px;
             padding-top:3px;
         }
 
     }
     .society-location{
         color:skyblue;
-        font-size:18px;
+        font-size:17px;
 
         @include small(){
             font-size: 13px;
@@ -295,6 +364,9 @@ li.society{
     @include small(){
         font-size:16px;
         height: $column-height;
+    }
+    @include xs(){
+        width:25%;
     }
     div{
         color: white;
