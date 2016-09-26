@@ -47,7 +47,7 @@ export class AppComponent implements OnInit{
       .subscribe(
         data => this.timetable = data,
         err => console.error(err),
-        () => console.log('done')
+        () => console.log('Hey buddy :)')
       );
   }
 
